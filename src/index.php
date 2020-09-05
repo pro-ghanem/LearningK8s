@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 	echo "0 results";
 }
 // Create database
-$sql = "CREATE DATABASE ghanem";
+$sql = "CREATE DATABASE my_db";
 if ($conn->query($sql) === TRUE) {
   echo "Database created successfully";
 } else {
@@ -36,7 +36,7 @@ if ($conn->connect_error) {
 
   
 
-$sql = "INSERT INTO ghanem (firstname, lastname, email)
+$sql = "INSERT INTO my_db (firstname, lastname, email)
 VALUES ('ahmed', 'ghanem', 'pro.ahmedghanem@gmail.com')";
 
 if ($conn->query($sql) === TRUE) {

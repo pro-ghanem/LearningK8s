@@ -17,4 +17,27 @@ if ($result->num_rows > 0) {
 } else {
 	echo "0 results";
 }
+
+
+
+// Create database
+$sql = "CREATE DATABASE ghanem";
+if ($conn->query($sql) === TRUE) {
+  echo "Database created successfully";
+} else {
+  echo "Error creating database: " . $conn->error;
+}
+      
+
+$sql = "INSERT INTO ghanem (firstname, lastname, email)
+VALUES ('ahmed', 'ghanem', 'pro.ahmedghanem@gmail.com')";
+
+if ($conn->query($sql) === TRUE) {
+  $last_id = $conn->insert_id;
+  echo "New record created successfully. Last inserted ID is: " . $last_id;
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
 $conn->close();

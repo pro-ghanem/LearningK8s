@@ -1,5 +1,5 @@
 <?php
-echo "Inside K8s with MySQL DIj <br>";
+echo " Welcome to Ghanem Test<br>";
 $conn = new mysqli("mysql", "db_user", "ghanem", "my_db");
 // Check connection
 if ($conn->connect_error) {

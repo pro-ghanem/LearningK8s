@@ -1,6 +1,6 @@
 <?php
 echo "Inside K8s with MySQL <br>";
-$conn = new mysqli("mysql", "db_user", "ghanem");
+$conn = new mysqli("mysql", "db_user","ghanem");
 // Check connection
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
@@ -17,9 +17,6 @@ if ($result->num_rows > 0) {
 } else {
 	echo "0 results";
 }
-
-
-
 // Create database
 $sql = "CREATE DATABASE ghanem";
 if ($conn->query($sql) === TRUE) {
@@ -27,7 +24,17 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error creating database: " . $conn->error;
 }
-      
+    
+
+
+// Check connection
+$conn = new mysqli("mysql", "db_user","ghanem","my_db");
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+  
 
 $sql = "INSERT INTO ghanem (firstname, lastname, email)
 VALUES ('ahmed', 'ghanem', 'pro.ahmedghanem@gmail.com')";
